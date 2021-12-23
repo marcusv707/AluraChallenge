@@ -1,0 +1,57 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #051d3b;
+}
+
+.head {
+    margin: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    font-family: 'Inter', sans-serif;
+}
+
+.head__input {
+    background: rgba(255, 255, 255, 0.16);
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 0 1.4rem;
+    height: 100%;
+    width: 50%;
+    font-size: 1.6rem;
+}
+
+.head__input::placeholder {
+    color:rgba(255, 255, 255, 0.64);
+}
+
+.head__input:hover, .head__input:focus {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.head__input:focus::placeholder {
+    color: transparent;
+}
+
+.head__user {
+    display: flex;
+    align-items: center;
+}
+
+.head__user--photo {
+    margin-right: .8rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.head__user--name {
+    font-size: 1.6rem;
+    color: white;
+    /* font-family: 'Inter', sans-serif; */
+}
