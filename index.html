@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,70 +7,80 @@
     <title>Alura DEV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/head.css">
 </head>
-
 <body>
-    <header class="head">
-        <div class="head__logo">
+    <header class="header">
+        <h1 class="header__logo">
             <img src="./assets/images/Logo.svg" alt="Logo Alura Dev">
-        </div>
-        <input class="head__input" type="text" placeholder="Busque por algo">
-        <div class="head__user">
-            <div class="head__user--box">
-                <img class="head__user--photo" src="./assets/images/Photo.png" alt="Foto do usuário">
-                <span class="head__user--name">Harry</span>
-            </div>
+        </h1>
+        <label for="input__projetos">Buscar projetos</label>
+        <input class="header__input" id="input__projetos" type="text" name="projeto" placeholder="Busque por algo">
+        <div class="header__buttons">
+            <button class="header__button button__lupa"><img src="./assets/images/icon-lupa.svg" alt=""></button>
+            <button class="header__button button__menu"><img src="./assets/images/icon-menu.svg" alt=""></button>
+            <div class="header__user"><img src="./assets/images/Photo.png" alt="Foto usuário">Harry</div>
         </div>
     </header>
-    <div class="content">
-        <div class="menu">
-            <h2 class="titulo-secao">Menu</h2>
-            <nav>
-                <ul>
-                    <li><a class="menu__link menu__link--editor" href=""><img
-                                src="./assets/images/icon-editor-active.svg" alt=""><span>Editor de código</span></a>
-                    </li>
-                    <li><a class="menu__link menu__link--comunidade" href=""><img
-                                src="./assets/images/icon-comunidade-inactive.svg" alt=""><span>Comunidade</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="code"></div>
-        <div class="detalhes">
-            <form action="">
-                <div class="container">
-                    <h2 class="titulo-secao">Seu projeto</h2>
-                    <label class="detalhes__label" for="nome-projeto">Nome do seu projeto</label>
-                    <input class="detalhes__input" type="text" name="nome-projeto" id="nome-projeto" required placeholder="Nome do seu projeto">
-                    <label class="detalhes__label" for="descricao-projeto">Descrição do seu projeto</label>
-                    <textarea class="detalhes__input" name="descricao-projeto" id="descricao-projeto" rows="2" placeholder="Descrição do seu projeto"></textarea>
-                </div>
-                <div class="container">
-                    <h2 class="titulo-secao">Personalização</h2>
-                    <label class="detalhes__label" for="linguagem">Linguagem de programação</label>
-                    <select class="detalhes__input detalhes__select" name="language" id="linguagem">
-                        <!-- <option disabled="disabled" selected="selected">Selecione uma linguagem</option> -->
-                        <option class="linguagem" value="lang-1" selected>JavaScript</option>
-                        <option class="linguagem" value="lang-2">Rust</option>
-                        <option class="linguagem" value="lang-3">Python</option>
-                        <option class="linguagem" value="lang-4">PHP</option>
-                        <option class="linguagem" value="lang-5">Java</option>
-                        <option class="linguagem" value="lang-6">C/C++</option>
-                        <option class="linguagem" value="lang-7">Lua</option>
-                    </select>
-                    <label class="detalhes__label" for="color">Cor de fundo</label>
-                    <input class="detalhes__input--color" type="color" name="color" id="color">
-                    <input class="button" type="submit" value="Salvar projeto">
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
+    <main class="main">
+        <section class="menu">
+            <h2 class="side_title">Menu</h2>
+            <a class="menu__link" href="#"><img src="./assets/images/icon-editor-active.svg" alt="Logo editor"><span>Editor de código</span></a>
+            <a class="menu__link menu__link--inactive" href="#"><img src="./assets/images/icon-comunidade-inactive.svg" alt="Logo comunidade"><span>Comunidade</span></a>
+        </section>
+        <section class="code">
+            <div class="code__background">
+                <div class="code__window">
+                    <div class="code__window__buttons">
+                        <div class="code__window__buttons--red"></div>
+                        <div class="code__window__buttons--yellow"></div>
+                        <div class="code__window__buttons--green"></div>
+                    </div>
+                    <label for="code-field">Campo do código</label>
+                    <textarea name="code-field" id="code-field" rows="20">const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
 
+const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+
+const unfold = (f, seed) => {
+  const go = (f, seed, acc) => {
+    const res = f(seed)
+    return res ? go(f, res[1], acc.concat([res[0]])) : acc
+  }
+  return go(f, seed, [])
+}
+                    </textarea>
+                </div>
+            </div>
+            <button class="code__button">Visualizar com o highlight</button>
+        </section>
+        <section class="project">
+            <form action="">
+                <div class="project__info">
+                    <h2 class="side_title">Seu projeto</h2>
+                    <label for="project-name">Nome do projeto</label>
+                    <input class="project__input" type="text" name="project-name" id="project-name" placeholder="Nome do seu projeto">
+                    <label for="project-description">Descrição do projeto</label>
+                    <textarea class="project__input" name="project-description" id="project-description" rows="2" placeholder="Descrição do seu projeto"></textarea>
+                </div>
+                <div class="project__config">
+                    <h2 class="side_title">Personalização</h2>
+                    <div class="project__config__container">
+                        <label for="project-language"></label>
+                        <select class="project__input project__select" name="project-language" id="project-language">
+                            <option value="op-1" selected>JavaScript</option>
+                            <option value="op-2">CSS</option>
+                            <option value="op-3">HTML</option>
+                        </select>
+                        <label for="project-color">Cor de fundo</label>
+                        <input class="project__input__color" type="color" name="project-color" id="project-color" value="#6bd1ff">
+                    </div>
+                </div>
+                <input class="project__input__submit" type="submit" value="Salvar projeto">
+            </form>
+        </section>
+    </main>
+</body>
 </html>

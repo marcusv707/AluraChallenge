@@ -1,0 +1,109 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.6rem 1.6rem 4rem;
+    align-items: center;
+    height: 56px;
+}
+
+.header__logo {
+    display: inline-block;
+}
+
+.header label {
+    display: none;
+}
+
+.header__input {
+    display: none;
+    background: rgba(255, 255, 255, 0.16);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 1.6rem 1.4rem;
+    border-radius: .8rem;
+    outline: none;
+    margin: 0 4rem;
+    width: 50%;
+    max-width: 80rem;
+    box-sizing: border-box;
+}
+
+.header__input:hover, .header__input:focus {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.header__input::placeholder {
+    color: #FFFFFF;
+    opacity: 0.64;
+}
+
+.header__input:focus::placeholder {
+    color: transparent;
+}
+
+.header__button {
+    background: transparent;
+    border: none;
+    padding: 1.2rem;
+    margin-left: .8rem;
+}
+
+.header__button:hover {
+    background: rgba(80, 129, 251, 0.08);
+    border-radius: 16px;
+}
+
+.header__button:active {
+    background: rgba(80, 129, 251, 0.16);
+    border-radius: 16px;
+}
+
+.header__user {
+    display: none;
+    color: white;
+    padding: 1.2rem;
+}
+
+.header__user:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: .8rem;
+}
+
+.header__user img{
+    margin-right: .8rem;
+}
+
+@media screen and (min-width: 600px) {
+    .button__lupa {
+        display: none;
+    }
+    .header__input {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        margin: 3.2rem 3.2rem 4rem;
+    }
+    .header__logo {
+        width: 20%;
+    }
+    .button__menu {
+        display: none;
+    }
+    .header__buttons {
+        width: 20%;
+    }
+    .header__input {
+        width: 50%;
+    }
+    .header__user {
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+}
