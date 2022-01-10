@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,15 @@
     <title>Alura DEV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/atom-one-dark.css">
     <link rel="stylesheet" href="./assets/css/head.css">
 </head>
+
 <body>
     <header class="header">
         <h1 class="header__logo">
@@ -21,66 +26,80 @@
         <input class="header__input" id="input__projetos" type="text" name="projeto" placeholder="Busque por algo">
         <div class="header__buttons">
             <button class="header__button button__lupa"><img src="./assets/images/icon-lupa.svg" alt=""></button>
-            <button class="header__button button__menu"><img src="./assets/images/icon-menu.svg" alt=""></button>
-            <div class="header__user"><img src="./assets/images/Photo.png" alt="Foto usuário">Harry</div>
+            <button class="header__button button__menu" data-button-menu><img src="./assets/images/icon-menu.svg" alt=""></button>
+            <div class="user header__user"><img src="./assets/images/Photo.png" alt="Foto usuário">Harry</div>
         </div>
     </header>
     <main class="main">
-        <section class="menu">
+        <section class="menu" data-menu>
             <h2 class="side_title">Menu</h2>
-            <a class="menu__link" href="#"><img src="./assets/images/icon-editor-active.svg" alt="Logo editor"><span>Editor de código</span></a>
-            <a class="menu__link menu__link--inactive" href="#"><img src="./assets/images/icon-comunidade-inactive.svg" alt="Logo comunidade"><span>Comunidade</span></a>
+            <ul class="menu__itens">
+                <li class="menu__item">
+                    <a class="menu__link" href="/">
+                        <div class="container">
+                            <div class="menu__link__icon"><img src="./assets/images/icon-code.svg" alt=""></div>
+                            <span>Editor de código</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link menu__link--inactive" href="/comunidade.html">
+                        <div class="container">
+                            <div class="menu__link__icon"><img src="./assets/images/icon-comunidade.svg" alt=""></div>
+                            <span>Comunidade</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <hr class="menu__line">
+            <div class="menu__user user"><img src="./assets/images/Photo.png" alt="Foto usuário">Harry</div>
         </section>
         <section class="code">
-            <div class="code__background">
-                <div class="code__window">
+            <div class="code__background" data-code-background>
+                <div class="code__window hljs">
                     <div class="code__window__buttons">
                         <div class="code__window__buttons--red"></div>
                         <div class="code__window__buttons--yellow"></div>
                         <div class="code__window__buttons--green"></div>
                     </div>
-                    <label for="code-field">Campo do código</label>
-                    <textarea name="code-field" id="code-field" rows="20">const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
-
-const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-
-const unfold = (f, seed) => {
-  const go = (f, seed, acc) => {
-    const res = f(seed)
-    return res ? go(f, res[1], acc.concat([res[0]])) : acc
-  }
-  return go(f, seed, [])
-}
-                    </textarea>
+                    <div class="codigo-wrapper">
+                        <pre><code class="code__window__area hljs javascript" contenteditable="true" spellcheck="false" aria-label="Editor de código">console.log("Olá mundo");</code></pre>
+                    </div>
                 </div>
             </div>
-            <button class="code__button">Visualizar com o highlight</button>
+            <button class="code__button" data-button-highlight>Visualizar com o highlight</button>
         </section>
         <section class="project">
             <form action="">
                 <div class="project__info">
                     <h2 class="side_title">Seu projeto</h2>
                     <label for="project-name">Nome do projeto</label>
-                    <input class="project__input" type="text" name="project-name" id="project-name" placeholder="Nome do seu projeto">
+                    <input class="project__input" type="text" name="project-name" id="project-name"
+                        placeholder="Nome do seu projeto">
                     <label for="project-description">Descrição do projeto</label>
-                    <textarea class="project__input" name="project-description" id="project-description" rows="2" placeholder="Descrição do seu projeto"></textarea>
+                    <textarea class="project__input" name="project-description" id="project-description" rows="2"
+                        placeholder="Descrição do seu projeto"></textarea>
                 </div>
                 <div class="project__config">
                     <h2 class="side_title">Personalização</h2>
                     <div class="project__config__container">
                         <label for="project-language"></label>
-                        <select class="project__input project__select" name="project-language" id="project-language">
+                        <select class="project__input project__select" name="project-language" id="project-language" data-select-linguagem>
                             <option value="op-1" selected>JavaScript</option>
                             <option value="op-2">CSS</option>
                             <option value="op-3">HTML</option>
                         </select>
                         <label for="project-color">Cor de fundo</label>
-                        <input class="project__input__color" type="color" name="project-color" id="project-color" value="#6bd1ff">
+                        <input class="project__input__color" type="color" name="project-color" data-input-color
+                            value="#6bd1ff">
                     </div>
                 </div>
                 <input class="project__input__submit" type="submit" value="Salvar projeto">
             </form>
         </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>

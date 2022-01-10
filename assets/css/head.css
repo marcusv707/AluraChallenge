@@ -10,10 +10,6 @@
     display: inline-block;
 }
 
-.header label {
-    display: none;
-}
-
 .header__input {
     display: none;
     background: rgba(255, 255, 255, 0.16);
@@ -62,16 +58,19 @@
 
 .header__user {
     display: none;
+}
+
+.user {
     color: white;
     padding: 1.2rem;
 }
 
-.header__user:hover {
+.user:hover {
     background: rgba(255, 255, 255, 0.08);
     border-radius: .8rem;
 }
 
-.header__user img{
+.user img{
     margin-right: .8rem;
 }
 

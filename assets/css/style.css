@@ -10,8 +10,18 @@ body {
 }
 
 label {
-    display: none;
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
 }
+
+/* button {
+    display: flex;
+    align-items: center;
+} */
 
 .side_title {
     font-family: 'Inter', sans-serif;
@@ -37,21 +47,86 @@ label {
     width: 22%;
 }
 
-.menu__link {
+.menu hr{
+    display: none;
+}
+
+.hide-menu {
+    position: absolute;
+    right: 1.6rem;
+    background: #2D415B;
+    border-radius: 8px;
+    padding: 2.4rem;
+    z-index: 2;
+    box-sizing: border-box;
+    height: calc(100vh - 12rem);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.24);
+}
+
+.hide-menu h2 {
+    display: none;
+}
+
+.hide-menu hr{
+    opacity: 0.08;
+}
+
+.menu__itens {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__item {
     margin-bottom: 1.6rem;
+}
+
+.menu__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.menu__link:hover {
+    opacity: 0.72;
+}
+
+.menu__link:hover .menu__link__icon {
+    background: rgba(80, 129, 251, 0.64);
+}
+
+.menu__link:active {
+    opacity: 1;
+}
+
+.menu__link:active .menu__link__icon {
+    background: #5081FB;
+}
+
+.menu__link--inactive {
+    opacity: 0.56;
+}
+
+.menu__link .container {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: normal;
 }
 
-.menu__link--inactive span {
-    opacity: .56;
-}
-
-.menu__link img {
+.menu__link__icon {
+    padding: 1.2rem;
+    border-radius: 1.6rem;
+    background: #5081FB;
+    display: flex;
+    align-items: center;
     margin-right: 1.6rem;
+}
+
+.menu__link--inactive .menu__link__icon {
+    background: rgba(80, 129, 251, 0.16);
+}
+
+.menu__user {
+    display: flex;
+    align-items: center;
 }
 
 .code {
@@ -99,10 +174,20 @@ label {
     background: #27c93f;
 }
 
-.code__window textarea {
+.code__window__area {
+    display: inline-block;
+    width: 100%;
+    min-height: 2rem;
+    outline: 0;
+    border: 0;
+    white-space: pre-wrap;
+    font-family: 'Roboto', monospace;
+    font-size: 1.4rem;
+}
+
+/* .code__window textarea {
     width: 100%;
     border: none;
-    /* background: #141414; */
     background: transparent;
     outline: none;
     color: #ffffff;
@@ -112,7 +197,7 @@ label {
     font-size: 1.4rem;
     line-height: 1.8rem;
     resize: vertical;
-}
+} */
 
 .code__button {
     background: rgba(80, 129, 251, 0.08);
@@ -250,6 +335,10 @@ label {
     }
     .menu {
         display: inline-block;
+    }
+    .menu__user,
+    .menu__line {
+        display: none;
     }
     .code {
         width: 50%;
